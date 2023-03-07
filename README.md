@@ -24,7 +24,7 @@ However, without one we will not be able to supply the behaviour that we may hav
 
 I used to use the double-back key tap technique in my apps prior to Android 10 but dropped that technique after changing to gesture navigation from Android 10 onwards. I would argue if an app starts on the first fragment displayed and exits on the same fragment then I doubt that a user is going to have premature exits more than once or twice when using the app for the first time. All the Predictive Back Gesture will do is probably reduce that to one false exit, while the user comes to terms with exactly what the Predictive Back Gesture does.
 
-By default, any net7.0-android or xamarin.android app targeting Android 13 will default to displaying a Predictive Back Gesture on exiting under the following conditions. 
+By default, any net7.0-android or xamarin.android app using the blank app template targeting Android 13 will default to displaying a Predictive Back Gesture on exiting under the following conditions. 
 
 1.	The device is running Android 13.
 2.	The androidmanifest.xml file contains the following entry in the application tag android:enableOnBackInvokedCallback="true". 
@@ -47,9 +47,9 @@ The OnBackPressedCallback class is an abstract class, so we must write our own c
 
 Inside our class, we pass a bool enabled = true to the base class to enable the callback. Finally, in the MainActivity we use AndroidX.Activity’s OnBackPressedDispatcher’s AddCallback method to add our OnBackPressedCallback to the activity. 
 
-An OnBackPressedCallback must supply an HandleOnBackPressed() method which will be called for back gestures or back key presses. In this method, we check for the navigationMode to supply the appropriate string to the Toast message. We then remove the callback (disabling it) so it can’t be called again and therefore on the next back press or swipe the app will exit. Of course, you could modify the HandleOnBackPressed to be more sophisticated as we mentioned previously with dialogs and double taps etc.
+An OnBackPressedCallback must supply an HandleOnBackPressed() method which will be called for back gestures or back key presses. In this method, we check for the navigationMode to supply the appropriate string to the Toast message. We then remove the callback (disabling it) so it can’t be called again and therefore on the next back press or swipe the app will exit. Of course, you could modify the HandleOnBackPressed to be more sophisticated as mentioned previously with dialogs and double taps etc.
 
-To see how OnBackPressedCallbacks are used in Fragments, please take a look at any of the NavigationGraph(x) tutorials. The most recent one is NavigationGraph7Net7.
+To see how OnBackPressedCallbacks are used in Fragments, please examine any of the NavigationGraph(x) tutorials. The most recent one is NavigationGraph7Net7.
 
 **Important Note:**
 
@@ -65,6 +65,7 @@ public void OnActivityDestroyed(Activity activity)
 }
 ```
 
+In conclusion, I would like to stress that these techniques as demonstrated in the OnBackPressedCallback are not a recommendation and should only be used as a last resort on any Android 10 and above device which all support gesture navigation.
 
 
 
