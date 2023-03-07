@@ -2,7 +2,7 @@
 
 **Using Predictive Back Gesture in conjunction with an OnBackPressedCallback**
 
-Since Android 10 we had swipe gestures for navigating in our apps and basically, most users have adapted and moved away from using three-button navigation. 
+Since Android 10 we've had swipe gestures for navigating in our apps and basically, most users have adapted and moved away from using three-button navigation. 
 
 The most obvious advantage is more screen real estate to work with, while also giving our apps a more immersive look. As an example on one screen in my app containing a RecyclerView and a BottomNavigationView, I can display 8 items in the RecyclerView without scrolling as compared to 10 items when there is only a sliver of a NavigationBar as you have when you remove the 3-button NavigationBar.
 
@@ -10,7 +10,7 @@ A while back I did a survey of my users regarding back button navigation compare
 
 Of course, if we support devices lower than Android 10 we have to support 3-button navigation, however, you tend to think that after 4 years of swipe navigation, the days of 3-button navigation are numbered as Google raises the minimum SDK value with each new version of Android.
 
-If you read this far, then you probably wondering what the above has got to do with the new Predictive Back Gesture which will be available in Android 14 and is available now in Android 13 assuming you have turned on Predictive Back Animations via Developer Options.  
+If you have read this far, then you are probably wondering what the above has got to do with the new Predictive Back Gesture which will be available in Android 14 and is available now in Android 13 assuming you have turned on Predictive Back Animations via Developer Options.  
 
 When you first read up on Predictive Back Gesture the first thing that Google’s docs comment on is that you need to be using  OnBackPressedCallback which is available in Xamarin.AndroidX.AppCompat 1.6.0.1. However, that is not entirely true.
 
