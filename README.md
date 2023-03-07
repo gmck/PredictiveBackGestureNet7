@@ -1,11 +1,6 @@
-﻿#
-**PredictiveBackGestureNet7**
-#
+﻿<p style="text-align: center;">PredictiveBackGestureNet7</p>
 
-###
-Using Predictive Back Gesture in conjunction with an OnBackPressedCallback 
-###
-
+**Using Predictive Back Gesture in conjunction with an OnBackPressedCallback**
 
 Since Android 10 we had swipe gestures for navigating in our apps and basically, most users have adapted and moved away from using three-button navigation. 
 

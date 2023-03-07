@@ -7,28 +7,36 @@ using System;
 
 namespace com.companyname.predictivebackgesturenet7
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true)]  // Theme = "@style/Theme.PredictiveBackGesture" - Not required - see Styles.xml and postSplashScreenTheme
+    [Activity(Label = "@string/app_name", MainLauncher = true)]  // Theme = "@style/Theme.PredictiveBackGesture" - Not required - see styles.xml and postSplashScreenTheme
     public class MainActivity : AppCompatActivity
     {
         private readonly string logTag = "PredictiveBackgesture";
         protected override void OnCreate(Bundle? savedInstanceState)
         {
             AndroidX.Core.SplashScreen.SplashScreen.InstallSplashScreen(this);
-            //WindowCompat.SetDecorFitsSystemWindows(Window!, false);
-            
             base.OnCreate(savedInstanceState);
-            
-            if (OperatingSystem.IsAndroidVersionAtLeast(28))
-                Window!.Attributes!.LayoutInDisplayCutoutMode = LayoutInDisplayCutoutMode.Default;
-
+           
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            // Add a OnBackPressedCallback if required
+            // Only add a callback on Android 13 devices if using 3-button navigation - everything else adds a callback
+            // Another way of putting it Android 13 devices using gesture navigation don't get the callback - all other devices get it
+
             if (OperatingSystem.IsAndroidVersionAtLeast(33) && NavigationBarUtils.GetNavigationBarInteractionMode(this) != NavigationBarUtils.NavigationBarGestureMode)
                 OnBackPressedDispatcher.AddCallback(this, new BackPressedCallback(this));
             else if (!OperatingSystem.IsAndroidVersionAtLeast(33))
                 OnBackPressedDispatcher.AddCallback(this, new BackPressedCallback(this));
+
+            // Which ever you find more readable
+            //if (!OperatingSystem.IsAndroidVersionAtLeast(33) || NavigationBarUtils.GetNavigationBarInteractionMode(this) == NavigationBarUtils.NavigationBarGestureMode) 
+            //{
+            //    if (!OperatingSystem.IsAndroidVersionAtLeast(33))
+            //        OnBackPressedDispatcher.AddCallback(this, new BackPressedCallback(this));
+            //}
+            //else OnBackPressedDispatcher.AddCallback(this, new BackPressedCallback(this));
+
+            if (OperatingSystem.IsAndroidVersionAtLeast(28))
+                Window!.Attributes!.LayoutInDisplayCutoutMode = LayoutInDisplayCutoutMode.Default;
         }
 
         protected override void OnDestroy()
