@@ -55,7 +55,7 @@ To see how OnBackPressedCallbacks are used in Fragments, please examine any of t
 
 One of the problems I discovered when first using the NavigationComponent was that unless I called Activity.Finish() in the HandleOnBackPressed() of the Start Destination fragment, Activity.IsFinshing would always be false in the OnDestroy of the MainActivity which would then prevent a bound service from shutting down as the app was exited. However, since the StartDestination needs to have its OnBackPressedCallback disabled to support the Predictive Back Gesture I had to find a new way to be able to ensure that the bound service would be shut down on exit.
 
-You will also find in this project another class PredictiveBackGestureApplication which inherits from Android’s ApplicationClass. The Application class supports the Application.IActivityLifecycleCallbacks. You can see there how I now call Activity.Finish() in the method below, which ensures that the service is shut down on exit while still maintaining the Predictive Back Gesture animation.
+This project suffers from the same problem, so you will also find in this project another class PredictiveBackGestureApplication which inherits from Android’s ApplicationClass. The Application class supports the Application.IActivityLifecycleCallbacks. You can see there how I now call Activity.Finish() in the method below, which ensures that the service is shut down on exit while still maintaining the Predictive Back Gesture animation.
 
 ```
 public void OnActivityDestroyed(Activity activity)
