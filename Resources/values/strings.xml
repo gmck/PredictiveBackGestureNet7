@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PredictiveBackGestureNet7</string>
     <string name="app_text">Hello, Android!</string>
+	<string name="tap_back_again">Tap the back button again to exit the app</string>
 </resources>

@@ -75,3 +75,14 @@ You will see a similar animation from an app in the app drawer that supports the
 
 
 Reference: https://developer.android.com/guide/navigation/predictive-back-gesture
+
+March 12, 2023
+
+I thought it best to add the double tap technique I mentioned that I had used before Android 10. 
+
+So to make this more complete I’ve added that to this version of the project. 
+However, as a compromise, for those users of devices less than Android 13, I’ve restricted it to those users who are still using 3-button navigation. 
+
+The old code is now commented out in the MainActivity. 
+
+Users that are already using gesture navigation, would be unlikely to appreciate the extra swipe to exit the app, when they have long been used to exiting apps with a single swipe from either the MainActivity or the Start Destination fragment in the case of the NavigationComponent.
