@@ -10,6 +10,7 @@ namespace com.companyname.predictivebackgesturenet7
     {
         protected PredictiveBackGestureApplication(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { }
         public PredictiveBackGestureApplication() { }
+        
         public override void OnCreate()
         {
             base.OnCreate();
@@ -32,6 +33,5 @@ namespace com.companyname.predictivebackgesturenet7
         public void OnActivitySaveInstanceState(Activity activity, Bundle? outState) { }
         public void OnActivityStarted(Activity activity) { }
         public void OnActivityStopped(Activity activity) { }
-
     }
 }

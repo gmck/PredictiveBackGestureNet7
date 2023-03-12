@@ -30,6 +30,7 @@ By default, any net7.0-android or xamarin.android app using the blank app templa
 2.	The androidmanifest.xml file contains the following entry in the application tag android:enableOnBackInvokedCallback="true". 
 3.	Predictive Back Animations is enabled in Developer Settings.
 4.	The device is set to use Gesture navigation – not 3-button navigation.
+5.  There is no active/enabled OnBackPressedCallback. 
 
 I don’t want to give the impression that I don’t use OnBackPressedCallbacks for I do use them in all the fragments that are part of the NavigationGraph series of tutorials here. The OnBackPressedCallback was first introduced in NavigationGraph2.
 

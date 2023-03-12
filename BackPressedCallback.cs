@@ -26,8 +26,5 @@ namespace com.companyname.predictivebackgesturenet7
                 backPressedTime = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             }
         }
-
     }
-
-   
 }

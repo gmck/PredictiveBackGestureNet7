@@ -4,7 +4,7 @@ using Android.Util;
 using Android.Views;
 using AndroidX.AppCompat.App;
 using System;
-using System.Diagnostics;
+
 
 namespace com.companyname.predictivebackgesturenet7
 {
