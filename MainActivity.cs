@@ -22,7 +22,7 @@ namespace com.companyname.predictivebackgesturenet7
             SetContentView(Resource.Layout.activity_main);
 
             // Only add a callback on Android 13 devices if using 3-button navigation - everything else adds a callback
-            // Another way of putting it Android 13 devices using gesture navigation don't get the callback - all other devices get it
+            // Another way of putting it, Android 13 devices using gesture navigation don't get the callback - all other devices get it
             //if (OperatingSystem.IsAndroidVersionAtLeast(33) && NavigationBarUtils.GetNavigationBarInteractionMode(this) != NavigationBarUtils.NavigationBarGestureMode)
             //    OnBackPressedDispatcher.AddCallback(this, new BackPressedCallback(this));
             //else if (!OperatingSystem.IsAndroidVersionAtLeast(33))
